@@ -11,6 +11,9 @@ begin
     new.raw_user_meta_data->>'display_name',
     new.raw_user_meta_data->>'phone_number'
   );
+  return new;
+end;
+$$ language plpgsql security definer;
 
 -- Adds fk constraint to profiles table. If profile is deleted from auth --> profile is deleted from profiles table.
 alter table public.profiles
@@ -19,9 +22,7 @@ foreign key (id)
 references auth.users(id)
 on delete cascade;
 
-  return new;
-end;
-$$ language plpgsql security definer;
+
 
 -- Retrieves all information of all chemicals (used in main page chemical list and to view detailes of a chemical)
 create or replace function get_chemicals()
