@@ -15,8 +15,7 @@ To connect your Supabse backend to your frontend, you need to add your projects 
 
 Step 3: hosting in GitHub pages.
 You can host your forked repository as a website using GitHub pages (check GitHub pages documentation). 
-In GitHub pages you can configure a custom domain, which will be useful in step 4.
+In GitHub pages you can configure a custom domain.
 
 Step 4: email verification.
 In Supabase you can setup an email verification, when users signup to your chem-reg. Users get a verification email with link to verify the signup process.
-In URL configuration you can configure, what link will be sent to the user. Here custom domain is most useful, because regular GitHub Pages link will lead to 404-error.

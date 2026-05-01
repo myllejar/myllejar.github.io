@@ -1,11 +1,15 @@
 -- Tables to be created in supabase
 
+-- Populate with correct H-phrases
 CREATE TABLE public.H_phrases (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
   code text NOT NULL,
   description text NOT NULL,
   CONSTRAINT H_phrases_pkey PRIMARY KEY (id)
 );
+
+-- In addition, you have to setup storage for pictograms in Supabase. 
+-- After you have pictogams in storage, you can populate Hazard_pictograms table.
 CREATE TABLE public.Hazard_pictograms (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
   code text NOT NULL,
@@ -14,6 +18,7 @@ CREATE TABLE public.Hazard_pictograms (
   image_path text NOT NULL,
   CONSTRAINT Hazard_pictograms_pkey PRIMARY KEY (id)
 );
+-- Populate with correct P-phrases
 CREATE TABLE public.P_phrases (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
   code text NOT NULL,

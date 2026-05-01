@@ -12,6 +12,13 @@ begin
     new.raw_user_meta_data->>'phone_number'
   );
 
+-- Adds fk constraint to profiles table. If profile is deleted from auth --> profile is deleted from profiles table.
+alter table public.profiles
+add constraint profiles_id_fkey
+foreign key (id)
+references auth.users(id)
+on delete cascade;
+
   return new;
 end;
 $$ language plpgsql security definer;
