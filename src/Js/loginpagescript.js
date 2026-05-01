@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (!email) return;
 
         const { error } = await window.supabase.auth.resetPasswordForEmail(email, {
-            redirectTo: "https://foxesdancing.github.io/Chemical-Register-OHTUII/resetPassword.html"
+            redirectTo: "https://myllejar.github.io/resetPassword.html"
         });
 
         if (error) {
